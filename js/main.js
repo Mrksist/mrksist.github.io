@@ -105,13 +105,7 @@ function initMaps() {
 
     map.addChild(new ymaps3.YMapDefaultSchemeLayer({ 
         customization: [{
-                tags: ['poi'],
-                stylers: {
-                    visibility: "off"
-                }
-            },
-            {
-                tags: ['business'],
+                tags: 'poi',
                 stylers: {
                     visibility: "off"
                 }
