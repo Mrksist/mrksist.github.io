@@ -37,7 +37,7 @@ function newModal(organization) {
                 <div class="modal-content">
                     <img src="img/${organization.id}z${parseInt(i)+1}.png" class="modal-img"></img>
                   <h2>${organization.name}</h2>
-                  <h4 style="text-align: center;">${organization.description}</h4>`;
+                  <h4 style="text-align: center;">${organization.description}</h4>
 
         for (let i of organization.info) {
             innerHTML += `<p style="text-align: left">• ${i}</p>`;
