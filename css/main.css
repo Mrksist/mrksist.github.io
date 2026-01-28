@@ -51,6 +51,12 @@
   border-radius: 10px
 }
 
+.modal-img {
+  margin-top: 2em;
+  border-radius: 1em;
+  width: 100%;
+}
+
 .school-marker-wrapper {
   width: 10em;
   transform: translate(-3em, -3em);
