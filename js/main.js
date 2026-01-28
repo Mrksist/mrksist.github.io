@@ -73,6 +73,7 @@ function calculateDistance(lon1, lat1, lon2, lat2) {
 }
 
 async function showPath(path) {
+    return;
     hideModals();
     hidePaths();
 
