@@ -15,7 +15,7 @@ function newMarker(organization) {
         markerElement.innerHTML = innerHTML
         markerElement.className = "school-marker-wrapper"
         markerElement.onclick = function () {
-            document.getElementById(organization.id).style.display = 'flex';
+            document.getElementById(organization.id + 'z' + i).style.display = 'flex';
         }
 
         map.addChild(new ymaps3.YMapMarker(
@@ -30,30 +30,30 @@ function newMarker(organization) {
 
 function newModal(organization) {
     let root = document.getElementById("main");
-    let innerHTML = ``
+    for(let i in organization.coordinates){
+        let innerHTML = ``
+        innerHTML += `
+             <div class="modal" id="${organization.id}z${i}" onclick="if(event.target == this) this.style.display = 'none'">
+                <div class="modal-content">
+                    <img src="img/${organization.id}z${parseInt(i)+1}.png" class="modal-img"></img>
+                  <h2>${organization.name}</h2>
+                  <h4 style="text-align: center;">${organization.description}</h4>`;
 
-    innerHTML += `
-         <div class="modal" id="${organization.id}" onclick="if(event.target == this) this.style.display = 'none'">
-            <div class="modal-content">
-                <img src="img/${organization.id + 'z1.png'}" class="modal-img"></img>
-              <h2>${organization.name}</h2>
-              <h4 style="text-align: center;">${organization.description}</h4>`;
-    for (let i of organization.info) {
-        innerHTML += `<p style="text-align: left">• ${i}</p>`;
+        for (let i of organization.info) {
+            innerHTML += `<p style="text-align: left">• ${i}</p>`;
+        }
+        if (organization.nearby.length) {
+            innerHTML += `<p style="text-align: left">• ОО рядом: `
+        }
+        
+        for (let i of organization.nearby) {
+            const nearOrg = organizations.find(a => a.id == i)
+            innerHTML += `<a class="a-near" onclick="showPath('${nearOrg.id}z${i}-${organization.id}z1')">${nearOrg.name}</a>, `
+        }
+        innerHTML = innerHTML.substring(0, innerHTML.length - 2);
+        innerHTML += `</div></div>`
+        root.innerHTML += innerHTML;
     }
-
-    if (organization.nearby.length) {
-        innerHTML += `<p style="text-align: left">• ОО рядом: `
-    }
-
-    for (let i of organization.nearby) {
-        const nearOrg = organizations.find(a => a.id == i)
-        innerHTML += `<a class="a-near" onclick="showPath('${nearOrg.id}-${organization.id}')">${nearOrg.name}</a>, `
-    }
-    innerHTML = innerHTML.substring(0, innerHTML.length - 2);
-    innerHTML += `</div></div>`
-
-    root.innerHTML += innerHTML;
 }
 
 
