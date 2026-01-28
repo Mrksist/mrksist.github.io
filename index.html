@@ -1,40 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/main.css" />
-  <script type="text/javascript" src="https://api-maps.yandex.ru/v3/?apikey=056e1c6d-63d3-408f-89a1-fc7968cf4e04&lang=ru_RU"></script>
+  <script type="text/javascript"
+    src="https://api-maps.yandex.ru/v3/?apikey=056e1c6d-63d3-408f-89a1-fc7968cf4e04&lang=ru_RU"></script>
   <script type="text/javascript" src="js/main.js"></script>
 </head>
+
 <body>
+  <div id="hide-paths" class="fixed-button" onclick='hidePaths()'>Скрыть маршруты</div>
   <div id="map" style="width: 100%; height: 100vh;">Загрузка карты...</div>
-  <div class="modal" id="lyceum3" onclick="if(event.target == this) this.style.display = 'none'">
-    <div class="modal-content">
-      <h2>Информация про Лицей №3</h2>
-      <h4 style="text-align: center;">Физико-математический лицей</h4>
-      <p style="text-align: left;">• Количество учащихся: 2026 человек</p>
-      <p style="text-align: left;">• Количество классов: √484</p>
-      <p style="text-align: left;">• Ближайший детский сад: №6 "Вишенка"</p>
-    </div>
-  </div>
-  <div class="modal" id="gymnasium2" onclick="if(event.target == this) this.style.display = 'none'">
-    <div class="modal-content">
-      <h2>Информация про Гимназию №2</h2>
-      <h4 style="text-align: center;">Гимназия с языковым уклоном</h4>
-      <p style="text-align: left;">• Количество учащихся: 2026 человек</p>
-      <p style="text-align: left;">• Количество классов: -22</p>
-      <p style="text-align: left;">• Ближайший детский сад: №48 "Красная шапочка"</p>
-    </div>
-  </div>
-  <div class="modal" id="detsad6" onclick="if(event.target == this) this.style.display = 'none'">
-    <div class="modal-content">
-      <h2>Информация детский сад №6</h2>
-      <h4 style="text-align: center;">Сад с дошкольным образованием</h4>
-      <p style="text-align: left;">• Количество мест: НЕмало</p>
-      <p style="text-align: left;">• Количество групп: ещё больше</p>
-      <p style="text-align: left;">• Ближайшая школа: <a onclick="sch3ds6_show()" class="a-near">МБОУ Лицей №3</a></p>
-    </div>
+  <div id="main">
   </div>
 </body>
+
 </html>
