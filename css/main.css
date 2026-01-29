@@ -90,3 +90,31 @@
   text-decoration: underline;
   color: #4f4f4f;
 }
+
+
+.cluster {
+  /* Минимальный размер — квадрат 3×3 em */
+  min-width: 1.3em;
+  min-height: 1.3em;
+
+  /* Выравнивание текста по центру */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Стилизация: рамка, фон, отступы */
+  border: 4px solid #4f4f4f;
+  border-radius: 10%;
+  background-color: #f0f0f0;
+  font-size: 2em;
+  padding: 0.5em;
+  font-family: Arial, sans-serif;
+  text-align: center;
+
+  /* Плавное изменение размеров при анимации/пересчёте */
+  transition: min-width 0.3s, min-height 0.3s;
+}
+
+.cluster-text {
+  margin: 0
+}
